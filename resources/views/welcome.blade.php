@@ -151,7 +151,7 @@
                                                 <div class="content">
                                                     <small>{{ $PostKantor->created_at->format('d M Y') }}</small>
                                                     <h5>{{ $PostKantor->title }}</h5>
-                                                    <p>{{ str_limit(strip_tags($PostKantor->body, 10)) }}</p>
+                                                    <p>{{ str_limit(strip_tags($PostKantor->body), 10) }}</p>
                                                     <a href="{{ route('post.show', $PostKantor->slug) }}"
                                                         class="ms-auto">Selengkapnya</a>
                                                 </div>
@@ -172,7 +172,7 @@
                                                 <div class="content">
                                                     <small>{{ $PostKua->created_at->format('d M Y') }}</small>
                                                     <h5>{{ $PostKua->title }}</h5>
-                                                    <p>{{ str_limit(strip_tags($PostKua->body, 10)) }}</p>
+                                                    <p>{{ str_limit(strip_tags($PostKua->body), 10) }}</p>
                                                     <a href="{{ route('post.show', $PostKua->slug) }}"
                                                         class="ms-auto">Selengkapnya</a>
                                                 </div>
@@ -194,7 +194,7 @@
                                                 <div class="content">
                                                     <small>{{ $PostMadrasah->created_at->format('d M Y') }}</small>
                                                     <h5>{{ $PostMadrasah->title }}</h5>
-                                                    <p>{{ str_limit(strip_tags($PostMadrasah->body, 10)) }}</p>
+                                                    <p>{{ str_limit(strip_tags($PostMadrasah->body), 10) }}</p>
                                                     <a href="{{ route('post.show', $PostMadrasah->slug) }}"
                                                         class="ms-auto">Selengkapnya</a>
                                                 </div>

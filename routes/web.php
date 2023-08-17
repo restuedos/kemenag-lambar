@@ -18,4 +18,11 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route Post
+Route::get('/post/detail/{post:slug}', 'PostController@show')->name('post.show');
+Route::get('/post/all', 'PostController@all')->name('post.all');
+
+// Route Config
+Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::get('/', 'ConfigController@show')->name('config.show');

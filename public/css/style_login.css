@@ -1,0 +1,16 @@
+/* style login */
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background-image: linear-gradient(to right top, #2f4858, #2a5667, #1f6474, #0f737e, #008284, #008d86, #009785, #04a181, #1daa7b, #34b274, #4aba6a, #61c25e);
+    @media (min-width: 768px) {
+        .gradient-form {
+            height: 100vh !important;
+        }
+    }
+    @media (min-width: 769px) {
+        .gradient-custom-2 {
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+        }
+    }
+}

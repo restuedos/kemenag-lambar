@@ -60,6 +60,14 @@ Route::post('dashboard/category-subcategory/save', 'CategoryController@store')->
 Route::get('dashboard/category-subcategory/edit/{category_id}', 'CategoryController@edit')->name('category-subcategory.edit');
 Route::get('dashboard/category-subcategory/remove/{category_id}', 'CategoryController@remove')->name('category-subcategory.remove');
 
+//Route Services
+Route::get('/dashboard/service', 'ServiceController@index')->name('service.index')->middleware('admin');
+Route::get('/dashboard/service/create', 'ServiceController@create')->name('service.create')->middleware('admin');
+Route::post('/dashboard/service/store', 'ServiceController@store')->name('service.store')->middleware('admin');
+Route::get('/dashboard/service/edit/{service}', 'ServiceController@edit')->name('service.edit')->middleware('admin');
+Route::patch('/dashboard/service/update/{service}', 'ServiceController@update')->name('service.update')->middleware('admin');
+Route::delete('/dashboard/service/destroy/{service}', 'ServiceController@destroy')->name('service.destroy')->middleware('admin');
+
 // Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
 //     \UniSharp\LaravelFilemanager\Lfm::routes();
 // });

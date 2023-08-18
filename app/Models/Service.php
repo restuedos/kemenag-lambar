@@ -15,4 +15,19 @@ class Service extends Model
         'image',
         'link'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(Service $service)
+    {
+        return $service;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

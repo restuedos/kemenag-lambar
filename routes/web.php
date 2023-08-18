@@ -42,3 +42,7 @@ Route::get('dashboard/category-subcategory/create', 'CategoryController@create')
 Route::post('dashboard/category-subcategory/save', 'CategoryController@store')->name('category-subcategory.store');
 Route::get('dashboard/category-subcategory/edit/{category_id}', 'CategoryController@edit')->name('category-subcategory.edit');
 Route::get('dashboard/category-subcategory/remove/{category_id}', 'CategoryController@remove')->name('category-subcategory.remove');
+
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });

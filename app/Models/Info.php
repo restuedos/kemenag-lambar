@@ -13,4 +13,19 @@ class Info extends Model
         'title',
         'link'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(Info $info)
+    {
+        return $info;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

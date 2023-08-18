@@ -35,6 +35,14 @@ Route::get('/', 'ConfigController@show')->name('config.show');
 Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::patch('/dashboard/config/update/{config}', 'ConfigController@update')->name('config.update')->middleware('admin');
 
+// Route Info/Pengumuman
+Route::get('/dashboard/info', 'InfoController@index')->name('info.index')->middleware('admin');
+Route::get('/dashboard/info/create', 'InfoController@create')->name('info.create')->middleware('admin');
+Route::post('/dashboard/info/store', 'InfoController@store')->name('info.store')->middleware('admin');
+Route::get('/dashboard/info/edit/{info}', 'InfoController@edit')->name('info.edit')->middleware('admin');
+Route::patch('/dashboard/info/update/{info}', 'InfoController@update')->name('info.update')->middleware('admin');
+Route::delete('/dashboard/info/destroy/{info}', 'InfoController@destroy')->name('info.destroy')->middleware('admin');
+
 //Route hero slider
 Route::get('/dashboard/slider', 'SliderController@index')->name('slider.index')->middleware('admin');
 Route::get('/dashboard/slider/create', 'SliderController@create')->name('slider.create')->middleware('admin');

@@ -15,4 +15,19 @@ class Slider extends Model
         'image',
         'link'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(Slider $slider)
+    {
+        return $slider;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

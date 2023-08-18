@@ -35,6 +35,14 @@ Route::get('/', 'ConfigController@show')->name('config.show');
 Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::patch('/dashboard/config/update/{config}', 'ConfigController@update')->name('config.update')->middleware('admin');
 
+//Route hero slider
+Route::get('/dashboard/slider', 'SliderController@index')->name('slider.index')->middleware('admin');
+Route::get('/dashboard/slider/create', 'SliderController@create')->name('slider.create')->middleware('admin');
+Route::post('/dashboard/slider/store', 'SliderController@store')->name('slider.store')->middleware('admin');
+Route::get('/dashboard/slider/edit/{slider}', 'SliderController@edit')->name('slider.edit')->middleware('admin');
+Route::patch('/dashboard/slider/update/{slider}', 'SliderController@update')->name('slider.update')->middleware('admin');
+Route::delete('/dashboard/slider/destroy/{slider}', 'SliderController@destroy')->name('slider.destroy')->middleware('admin');
+
 //Route Page
 Route::get('/dashboard/page', 'PageController@index')->name('page.index')->middleware('admin');
 Route::get('/dashboard/page/create', 'PageController@create')->name('page.create')->middleware('admin');

@@ -15,4 +15,19 @@ class Video extends Model
         'image',
         'link'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(Video $video)
+    {
+        return $video;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

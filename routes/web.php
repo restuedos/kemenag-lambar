@@ -84,6 +84,14 @@ Route::get('/dashboard/service/edit/{service}', 'ServiceController@edit')->name(
 Route::patch('/dashboard/service/update/{service}', 'ServiceController@update')->name('service.update')->middleware('admin');
 Route::delete('/dashboard/service/destroy/{service}', 'ServiceController@destroy')->name('service.destroy')->middleware('admin');
 
+//Route Video
+Route::get('/dashboard/video', 'VideoController@index')->name('video.index')->middleware('admin');
+Route::get('/dashboard/video/create', 'VideoController@create')->name('video.create')->middleware('admin');
+Route::post('/dashboard/video/store', 'VideoController@store')->name('video.store')->middleware('admin');
+Route::get('/dashboard/video/edit/{video}', 'VideoController@edit')->name('video.edit')->middleware('admin');
+Route::patch('/dashboard/video/update/{video}', 'VideoController@update')->name('video.update')->middleware('admin');
+Route::delete('/dashboard/video/destroy/{video}', 'VideoController@destroy')->name('video.destroy')->middleware('admin');
+
 // Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
 //     \UniSharp\LaravelFilemanager\Lfm::routes();
 // });

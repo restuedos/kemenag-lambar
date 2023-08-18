@@ -20,7 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route Post
-Route::get('/post/detail/{post:slug}', 'PostController@show')->name('post.show');
+Route::get('/dashboard/post', 'PostController@index')->name('post.index')->middleware('admin');
+Route::get('/dashboard/post/create', 'PostController@create')->name('post.create')->middleware('admin');
+Route::post('/dashboard/post/store', 'PostController@store')->name('post.store')->middleware('admin');
+Route::get('/dashboard/post/edit/{post}', 'PostController@edit')->name('post.edit')->middleware('admin');
+Route::patch('/dashboard/post/update/{post}', 'PostController@update')->name('post.update')->middleware('admin');
+Route::delete('/dashboard/post/destroy/{post}', 'PostController@destroy')->name('post.destroy')->middleware('admin');
+// Route::get('/dashboard/page/detail/{post}', 'PostController@show')->name('post.show')->middleware('admin');
+Route::get('/post/detail/{post}', 'PostController@show')->name('post.show');
 Route::get('/post/all', 'PostController@all')->name('post.all');
 
 // Route Config

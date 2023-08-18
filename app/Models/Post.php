@@ -18,6 +18,16 @@ class Post extends Model
         'status',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function getSingle(Post $post)
+    {
+        return $post;
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

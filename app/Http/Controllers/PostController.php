@@ -41,11 +41,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate(
+        $validated = $this->validate(
+            $request,
             [
                 'title' => 'required|max:255',
                 'body' => 'required',
-                'image' => 'required|mimes:png,jpg|max:500',
+                'image' => 'required|mimes:png,jpg,jpeg|max:500',
             ],
             [
                 'title.required' => 'Judul harus di isi',
@@ -105,11 +106,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $validated = $request->validate(
+        $validated = $this->validate(
+            $request,
             [
                 'title' => 'required|max:255',
                 'body' => 'required',
-                // 'image' => 'required|mimes:png,jpg|max:500',
+                'image' => 'sometimes|nullable|mimes:png,jpg,jpeg|max:500',
             ],
             [
                 'title.required' => 'Judul harus di isi',
@@ -138,7 +140,7 @@ class PostController extends Controller
                 'title'        => $request->title,
                 'slug'         => str_slug($request->title),
                 'body'         => $request->body,
-                'image'        => $request->image,
+                'image'        => $post->image,
                 'status'       => $request->status,
             ]);
         }

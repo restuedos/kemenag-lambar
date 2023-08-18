@@ -15,4 +15,19 @@ class Page extends Model
         'body',
         'image'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function getSingle(Page $page)
+    {
+        return $page;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

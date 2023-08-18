@@ -11,7 +11,7 @@
                 <h3 class="mt-3">{{ $page->title }}</h3>
                     <p>{{ $page->created_at->format('d M Y') }}   | Kategori : <span class="text-success"></span> </p>
                 <p>{!!  $page->body !!}</p>
-                <p>Created by : {{ $page->name}} </p>
+                <p>Created by : {{ $page->user->name}} </p>
             </div>
 
             <div class="col-md-4">

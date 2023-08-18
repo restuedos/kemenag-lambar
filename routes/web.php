@@ -35,6 +35,15 @@ Route::get('/', 'ConfigController@show')->name('config.show');
 Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::patch('/dashboard/config/update/{config}', 'ConfigController@update')->name('config.update')->middleware('admin');
 
+//Route Page
+Route::get('/dashboard/page', 'PageController@index')->name('page.index')->middleware('admin');
+Route::get('/dashboard/page/create', 'PageController@create')->name('page.create')->middleware('admin');
+Route::post('/dashboard/page/store', 'PageController@store')->name('page.store')->middleware('admin');
+Route::get('/dashboard/page/edit/{page}', 'PageController@edit')->name('page.edit')->middleware('admin');
+Route::get('/page/detail/{page}', 'PageController@show')->name('page.show')->middleware('admin');
+Route::patch('/dashboard/page/update/{page}', 'PageController@update')->name('page.update')->middleware('admin');
+Route::delete('/dashboard/page/destroy/{page}', 'PageController@destroy')->name('page.destroy')->middleware('admin');
+
 // Route Menu
 Route::get('dashboard/menu', 'CategoryController@index')->name('category-subcategory.list');
 Route::post('dashboard/category-subcategory/save-nested-categories', 'CategoryController@saveNestedCategories')->name('category-subcategory.save-nested-categories');

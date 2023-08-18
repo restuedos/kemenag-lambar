@@ -13,4 +13,19 @@ class Infographic extends Model
         'title',
         'image'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(Infographic $infographic)
+    {
+        return $infographic;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

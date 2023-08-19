@@ -19,6 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+// Route user
+Route::get('/dashboard/user', 'UserController@index')->name('dashboard.user.index')->middleware('admin');
+Route::post('/dashboard/user/store', 'UserController@store')->name('user.store')->middleware('admin');
+Route::get('/dashboard/user/edit/{user}', 'UserController@edit')->name('user.edit')->middleware('admin');
+Route::patch('/dashboard/user/update/{user}', 'UserController@update')->name('user.update')->middleware('admin');
+Route::delete('/dashboard/user/destroy/{user}', 'UserController@destroy')->name('user.destroy')->middleware('admin');
+
 //Route Info graphic
 Route::get('/dashboard/infographic', 'InfographicController@index')->name('infographic.index')->middleware('admin');
 Route::get('/dashboard/infographic/create', 'InfographicController@create')->name('infographic.create')->middleware('admin');

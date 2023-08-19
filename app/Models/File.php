@@ -13,4 +13,19 @@ class File extends Model
         'title',
         'file_name'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+    }
+
+    public function getSingle(File $file)
+    {
+        return $file;
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

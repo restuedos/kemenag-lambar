@@ -43,6 +43,15 @@ Route::get('/', 'ConfigController@show')->name('config.show');
 Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::patch('/dashboard/config/update/{config}', 'ConfigController@update')->name('config.update')->middleware('admin');
 
+
+//Route File
+Route::get('/dashboard/file', 'FileController@index')->name('file.index')->middleware('admin');
+Route::get('/dashboard/file/create', 'FileController@create')->name('file.create')->middleware('admin');
+Route::post('/dashboard/file/store', 'FileController@store')->name('file.store')->middleware('admin');
+Route::get('/dashboard/file/edit/{file}', 'FileController@edit')->name('file.edit')->middleware('admin');
+Route::patch('/dashboard/file/update/{file}', 'FileController@update')->name('file.update')->middleware('admin');
+Route::delete('/dashboard/file/destroy/{file}', 'FileController@destroy')->name('file.destroy')->middleware('admin');
+
 // Route Info/Pengumuman
 Route::get('/dashboard/info', 'InfoController@index')->name('info.index')->middleware('admin');
 Route::get('/dashboard/info/create', 'InfoController@create')->name('info.create')->middleware('admin');

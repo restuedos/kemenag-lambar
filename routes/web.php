@@ -112,3 +112,7 @@ Route::delete('/dashboard/video/destroy/{video}', 'VideoController@destroy')->na
 // Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
 //     \UniSharp\LaravelFilemanager\Lfm::routes();
 // });
+
+Route::any('{url}', function(){
+    return redirect('/');
+})->where('url', '.*');

@@ -124,24 +124,50 @@
                 <div class="col-12">
                     <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            <button class="nav-link active" id="pills-terkini-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-terkini" type="button" role="tab" aria-controls="pills-terkini"
                                 aria-selected="true">Terkini</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            <button class="nav-link" id="pills-kantor-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-kantor" type="button" role="tab" aria-controls="pills-kantor"
+                                aria-selected="false">Kantor</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-kua-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-kua" type="button" role="tab" aria-controls="pills-kua"
                                 aria-selected="false">KUA</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            <button class="nav-link" id="pills-madrasah-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-madrasah" type="button" role="tab" aria-controls="pills-madrasah"
                                 aria-selected="false">Madrasah</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                            aria-labelledby="pills-home-tab">
+                        <div class="tab-pane fade show active" id="pills-terkini" role="tabpanel"
+                            aria-labelledby="pills-terkini-tab">
+                            <div class="row">
+                                @if (!empty($post_terkini))
+                                    @foreach ($post_terkini as $PostTerkini)
+                                        <div class="col-md-3">
+                                            <article class="blog-post">
+                                                <img src="{{ asset('storage/' . $PostTerkini->image) }}" alt="">
+                                                <div class="content">
+                                                    <small>{{ $PostTerkini->created_at->format('d M Y') }}</small>
+                                                    <h5>{{ $PostTerkini->title }}</h5>
+                                                    <p>{{ str_limit(strip_tags($PostTerkini->body), 10) }}</p>
+                                                    <a href="{{ route('post.show', $PostTerkini->slug) }}"
+                                                        class="ms-auto">Selengkapnya</a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="pills-kantor" role="tabpanel"
+                            aria-labelledby="pills-kantor-tab">
                             <div class="row">
                                 @if (!empty($post_kantor))
                                     @foreach ($post_kantor as $PostKantor)
@@ -161,8 +187,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                            aria-labelledby="pills-profile-tab">
+                        <div class="tab-pane fade" id="pills-kua" role="tabpanel"
+                            aria-labelledby="pills-kua-tab">
                             <div class="row">
                                 @if (!empty($post_kua))
                                     @foreach ($post_kua as $PostKua)
@@ -182,8 +208,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                            aria-labelledby="pills-contact-tab">
+                        <div class="tab-pane fade" id="pills-madrasah" role="tabpanel"
+                            aria-labelledby="pills-madrasah-tab">
                             <div class="row">
                                 @if (!empty($post_madrasah))
                                     @foreach ($post_madrasah as $PostMadrasah)

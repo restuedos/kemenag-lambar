@@ -7,7 +7,7 @@
                 <div class="col-md-8">
                     <img src="img/project3.jpg" alt="" class="img-fluid">
                     <h3 class="mt-3">{{ $post->title }}</h3>
-                    <p class="justify">{{ $post->created_at->format('d M Y') }} | Kategori : <span class="text-success">
+                    <p class="justify">{{ $post->created_at->format('d M Y') }} | Kategori : {{ !empty($post->category->name) ? $post->category->name : '' }}<span class="text-success">
                         </span> </p>
                     <p>{!! $post->body !!}</p>
                     <p>Created by : {{ $post->user->name }} </p>

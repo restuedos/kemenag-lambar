@@ -57,7 +57,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="/dashboard/gallery" class="nav-link {{ Request::is('dashboard/gallery') ? 'active' : '' }}">
+            <a href="/dashboard/category" class="nav-link {{ Request::is('dashboard/category') ? 'active' : '' }}">
                 <i class="fas fa-layer-group"></i>
                 <p>
                     Kategori

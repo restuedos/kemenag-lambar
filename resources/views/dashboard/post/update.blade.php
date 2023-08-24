@@ -31,7 +31,7 @@
                             <div class="col-sm-4">
                                 <select name="category_id" id="kategori" class="form-control">
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->category_id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->category_id }}" @if ($post->category_id == $category->category_id) selected @endif>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('category_name'))

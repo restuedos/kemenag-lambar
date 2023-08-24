@@ -51,7 +51,6 @@ Route::get('/', 'ConfigController@show')->name('config.show');
 Route::get('/dashboard/config', 'ConfigController@index')->name('dashboard.index')->middleware('admin');
 Route::patch('/dashboard/config/update/{config}', 'ConfigController@update')->name('config.update')->middleware('admin');
 
-
 //Route File
 Route::get('/dashboard/file', 'FileController@index')->name('file.index')->middleware('admin');
 Route::get('/dashboard/file/create', 'FileController@create')->name('file.create')->middleware('admin');
@@ -108,6 +107,15 @@ Route::post('/dashboard/video/store', 'VideoController@store')->name('video.stor
 Route::get('/dashboard/video/edit/{video}', 'VideoController@edit')->name('video.edit')->middleware('admin');
 Route::patch('/dashboard/video/update/{video}', 'VideoController@update')->name('video.update')->middleware('admin');
 Route::delete('/dashboard/video/destroy/{video}', 'VideoController@destroy')->name('video.destroy')->middleware('admin');
+
+//Route Post Category
+Route::get('/dashboard/category', 'PostCategoryController@index')->name('category.index')->middleware('admin');
+Route::get('/dashboard/category/create', 'PostCategoryController@create')->name('category.create')->middleware('admin');
+Route::post('/dashboard/category/store', 'PostCategoryController@store')->name('category.store')->middleware('admin');
+Route::get('/dashboard/category/edit/{category}', 'PostCategoryController@edit')->name('category.edit')->middleware('admin');
+Route::patch('/dashboard/category/update/{category}', 'PostCategoryController@update')->name('category.update')->middleware('admin');
+Route::delete('/dashboard/category/destroy/{category}', 'PostCategoryController@destroy')->name('category.destroy')->middleware('admin');
+
 
 // Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
 //     \UniSharp\LaravelFilemanager\Lfm::routes();

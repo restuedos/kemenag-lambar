@@ -43,6 +43,7 @@ class ConfigController extends Controller
         $categories   = Category::where(['parent_id' => 0])->orderBy('sort_order', 'ASC')->get();
         $child_menus  = Category::where('parent_id', '!=', 0)->get();
 
+        $post_terkini  = Post::limit('4')->orderBy('created_at', 'DESC')->get();
         $post_kantor  = Post::where('category_id', 1)->limit('4')->get();
         $post_kua     = Post::where('category_id', 2)->limit('4')->get();
         $post_madrasah   = Post::where('category_id', 3)->limit('4')->get();
@@ -54,6 +55,7 @@ class ConfigController extends Controller
                 'sliders',
                 'infos',
                 'infographics',
+                'post_terkini',
                 'post_kantor',
                 'post_kua',
                 'categories',

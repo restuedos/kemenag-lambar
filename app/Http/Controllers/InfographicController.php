@@ -42,11 +42,10 @@ class InfographicController extends Controller
             $request,
             [
                 'title' => 'required|max:255',
-                'image' => 'required|mimes:png,jpg,jpeg|max:500',
+                'image' => 'required|mimes:png,jpg,jpeg',
             ],
             [
                 'title.required' => 'Judul harus di isi',
-                'image.required' => 'format image png/jpg, max size 500 Kb',
             ]
         );
         $file_name = time() . '_' . $request->image->getClientOriginalName();
@@ -97,11 +96,11 @@ class InfographicController extends Controller
             $request,
             [
                 'title' => 'required|max:255',
-                'image' => 'sometimes|nullable|mimes:png,jpg,jpeg|max:500',
+                'image' => 'sometimes|nullable|mimes:png,jpg,jpeg',
             ],
             [
                 'title.required' => 'Judul harus di isi',
-                // 'image.required' => 'format image png/jpg, max size 500 Kb',
+                // 'image.required' => 'format image png/jpg',
             ]
         );
 

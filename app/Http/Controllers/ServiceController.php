@@ -43,12 +43,12 @@ class ServiceController extends Controller
             [
                 'title'   => 'required|max:25',
                 // 'caption' => 'required|max:35',
-                // 'image'   => 'required|mimes:png,jpg,jpeg|max:1000',
+                // 'image'   => 'required|mimes:png,jpg,jpeg',
             ],
             [
                 'title.required'   => 'Judul harus di isi, max. 15 Karakter',
                 // 'caption.required' => 'caption harus di isi, max. 25 karakter',
-                // 'image.required'   => 'format image png/jpg, max size 1 Mb',
+                // 'image.required'   => 'format image png/jpg',
             ]
         );
 
@@ -112,12 +112,12 @@ class ServiceController extends Controller
             [
                 'title' => 'required|max:25',
                 // 'caption' => 'required|max:35',
-                // 'image' => 'sometimes|nullable|mimes:png,jpg,jpeg|max:1000',
+                // 'image' => 'sometimes|nullable|mimes:png,jpg,jpeg',
             ],
             [
                 'title.required' => 'Judul harus di isi, max. 15 Karakter',
                 // 'caption.required' => 'caption harus di isi, max. 25 karakter',
-                // 'image.required' => 'format image png/jpg, max size 1 Mb',
+                // 'image.required' => 'format image png/jpg',
             ]
         );
 

@@ -109,12 +109,12 @@ class PageController extends Controller
             [
                 'title' => 'required|max:255',
                 'body' => 'required',
-                'image' => 'sometimes|nullable|mimes:png,jpg,jpeg|max:500',
+                'image' => 'sometimes|nullable|mimes:png,jpg,jpeg',
             ],
             [
                 'title.required' => 'Judul harus di isi',
                 'body.required' => 'Deskripsi harus di isi',
-                // 'image.required' => 'format image png/jpg, max size 500 Kb',
+                // 'image.required' => 'format image png/jpg',
             ]
         );
         if ($request->hasFile('image')) {
